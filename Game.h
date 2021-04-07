@@ -4,6 +4,7 @@
 #include "SpriteComponent.h"
 #include "Window.h"
 #include "RendererSDL.h"
+#include "RendererOGL.h"
 #include "Vector2.h"
 #include "Astroid.h"
 #include "IRenderer.h"
@@ -37,7 +38,7 @@ public:
 	void addActor(Actor* actor);
 	void removeActor(Actor* actor);
 
-	RendererSDL& getRenderer() { return renderer; }
+	RendererOGL& getRenderer() { return renderer; }
 	//IRenderer::Type type() { return Type::SDL; }
 
 	// Game specific
@@ -52,7 +53,7 @@ private:
 
 	bool isRunning;
 	Window window;
-	RendererSDL renderer;
+	RendererOGL renderer;
 
 	bool isUpdatingActors;
 	vector<Actor*> actors;

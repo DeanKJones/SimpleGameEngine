@@ -1,7 +1,40 @@
-﻿  BackgroundSpriteComponent.cpp
+﻿  Actor.cpp
+  Astroid.cpp
+  BackgroundSpriteComponent.cpp
 G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,53): error C2027: use of undefined type 'Rectangle'
 G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(28): message : see declaration of 'Rectangle'
 G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,61): error C2065: 'nullRect': undeclared identifier
+  Game.cpp
+  Laser.cpp
+  RendererOGL.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(5440,1): error C2446: '==': no conversion from 'const _Ty' to 'SpriteComponent *'
+          with
+          [
+              _Ty=SrpiteComponent *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(5440,24): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(5474): message : see reference to function template instantiation '_InIt std::_Find_unchecked1<_InIt,_Ty>(_InIt,const _InIt,const _Ty &,std::false_type)' being compiled
+          with
+          [
+              _InIt=SpriteComponent **,
+              _Ty=SrpiteComponent *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xutility(5480): message : see reference to function template instantiation '_InIt std::_Find_unchecked<SpriteComponent**,_Ty>(const _InIt,const _InIt,const _Ty &)' being compiled
+          with
+          [
+              _InIt=SpriteComponent **,
+              _Ty=SrpiteComponent *
+          ]
+G:\Programming\SimpleGameEngine\SimpleGameEngine\RendererOGL.cpp(105): message : see reference to function template instantiation '_InIt std::find<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,SrpiteComponent*>(_InIt,const _InIt,SrpiteComponent *const &)' being compiled
+          with
+          [
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<SpriteComponent *>>>,
+              _Ty=SpriteComponent *
+          ]
+  SpriteComponent.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\SpriteComponent.cpp(17,49): error C2664: 'void RendererOGL::removeSprite(SrpiteComponent *)': cannot convert argument 1 from 'SpriteComponent *' to 'SrpiteComponent *'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\SpriteComponent.cpp(17,45): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+G:\Programming\SimpleGameEngine\SimpleGameEngine\RendererOGL.h(22,7): message : see declaration of 'RendererOGL::removeSprite'
   Texture.cpp
 G:\Programming\SimpleGameEngine\SimpleGameEngine\Texture.cpp(35,53): error C2039: 'toSDLRenderer': is not a member of 'IRenderer'
 G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(5): message : see declaration of 'IRenderer'
