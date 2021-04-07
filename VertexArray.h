@@ -1,10 +1,10 @@
 #pragma once
 
 constexpr float vertices[] = {
-	-0.5f, 0.5f, 0.f, //0.f, 0.f,	// Top Left
-	0.5f, 0.5f, 0.f, //1.f, 0.f,	// Top Right
-	0.5f, -0.5f, 0.f, //1.f, 1.f,	// Bottom Right
-	-0.5f, -0.5f, 0.f, //0.f, 1.f	// Bottom Left
+	-0.5f, 0.5f, 0.f, 0.f, 0.f,		// Top Left
+	0.5f, 0.5f, 0.f, 1.f, 0.f,		// Top Right
+	0.5f, -0.5f, 0.f, 1.f, 1.f,		// Bottom Right
+	-0.5f, -0.5f, 0.f, 0.f, 1.f		// Bottom Left
 };
 
 constexpr unsigned int indices[] = {

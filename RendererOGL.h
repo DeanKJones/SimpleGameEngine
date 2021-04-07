@@ -2,6 +2,7 @@
 #include "IRenderer.h"
 #include "VertexArray.h"
 #include "Vector2.h"
+#include "Shader.h"
 
 #include <vector>
 
@@ -19,7 +20,7 @@ public:
 	void endDraw();
 
 	void addSprite(class SpriteComponent* sprite);
-	void removeSprite(class SrpiteComponent* sprite);
+	void removeSprite(class SpriteComponent* sprite);
 	void drawSprite(const Actor& actor,
 		const class Texture& tex,
 		Rectangle srcRect,
@@ -35,6 +36,7 @@ private:
 	VertexArray* vertexArray;
 	SDL_GLContext context;
 	std::vector<class SpriteComponent*> sprites;
-
+	Shader* shader;
+	Matrix4 viewProj;
 };
 

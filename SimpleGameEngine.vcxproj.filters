@@ -75,6 +75,15 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RendererSDL.h">
@@ -142,5 +151,14 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="Shader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Maths</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

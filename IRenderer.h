@@ -27,5 +27,5 @@ public:
 		const class Texture& tex,
 		struct Rectangle srcRect,
 		Vector2 origin,
-		Flip flip) const;
+		Flip flip) const = 0;
 };

@@ -17,6 +17,7 @@ bool Game::initialize()
 
 void Game::load()
 {
+
 	// Load textures
 	Assets::loadTexture(renderer, "Res\\Ship01.png", "Ship01");
 	Assets::loadTexture(renderer, "Res\\Ship02.png", "Ship02");
@@ -29,10 +30,17 @@ void Game::load()
 	Assets::loadTexture(renderer, "Res\\Ship.png", "Ship");
 	Assets::loadTexture(renderer, "Res\\Laser.png", "Laser");
 
+
+	Assets::loadShader("Res\\Shaders\\Basic.vert", "Res\\Shaders\\Basic.frag", "", "", "", "Basic");
+	Assets::loadShader("Res\\Shaders\\Transform.vert", "Res\\Shaders\\Basic.frag", "", "", "", "Transform");
+	Assets::loadShader("Res\\Shaders\\Sprite.vert", "Res\\Shaders\\Sprite.frag", "", "", "", "Sprite");
+
 	// Controlled ship
 	Ship* ship = new Ship();
 	ship->setPosition(Vector2{ 100, 300 });
 
+	/*
+	
 	// Background
 	// Create the "far back" background
 	vector<Texture*> bgTexsFar{
@@ -52,10 +60,12 @@ void Game::load()
 	BackgroundSpriteComponent* bgSpritesClose = new BackgroundSpriteComponent(bgClose, bgTexsClose, 50);
 	bgSpritesClose->setScrollSpeed(-200.0f);
 
+	*/
+
 	const int astroidNumber = 20;
 	for (int i = 0; i < astroidNumber; ++i)
 	{
-		new Astroid();
+		Astroid* a = new Astroid();
 	}
 }
 
@@ -101,6 +111,7 @@ void Game::update(float dt)
 	// Move pending actors to actors
 	for (auto pendingActor : pendingActors)
 	{
+		pendingActor->computeWorldTransform();
 		actors.emplace_back(pendingActor);
 	}
 	pendingActors.clear();

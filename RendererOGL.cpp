@@ -4,10 +4,16 @@
 #include "Vector2.h"
 #include "Log.h"
 #include "SpriteComponent.h"
+#include "Assets.h"
+#include "Actor.h"
 
 #include <SDL_image.h>
 
-RendererOGL::RendererOGL() : window(nullptr), vertexArray(nullptr), context(nullptr)
+RendererOGL::RendererOGL() : window(nullptr), 
+							vertexArray(nullptr), 
+							context(nullptr), 
+							shader(nullptr),
+							viewProj(Matrix4::createSimpleViewProj(WINDOW_WIDTH, WINDOW_HEIGHT))
 {
 }
 
@@ -54,6 +60,9 @@ bool RendererOGL::initialize(Window& windowP)
 	}
 
 	vertexArray = new VertexArray(vertices, 4, indices, 6);
+	shader = &Assets::getShader("Basic");
+	shader = &Assets::getShader("Transform");
+	shader = &Assets::getShader("Sprite");
 	return true;
 }
 
@@ -65,6 +74,10 @@ void RendererOGL::beginDraw()
 	// Enable Alpha Blendering on the Color Buffer
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	// Active Shader and Vertex Array
+	shader->use();
+	shader->setMatrix4("uViewProj", viewProj);
+	vertexArray->setActive();
 }
 
 void RendererOGL::draw()
@@ -74,6 +87,12 @@ void RendererOGL::draw()
 
 void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Rectangle srcRect, Vector2 origin, Flip flip) const
 {
+	Matrix4 scaleMat = Matrix4::createScale((float)tex.getWidth(), (float)tex.getHeight(), 1.0f);
+	Matrix4 world = scaleMat * actor.getWorldTransform();
+	Matrix4 pixelTranslation = Matrix4::createTranslation(Vector3(-WINDOW_WIDTH / 2 - origin.x, -WINDOW_HEIGHT / 2 - origin.y, 0.0f)); // Screen pixel coordinates
+	shader->setMatrix4("uWorldTransform", world * pixelTranslation);
+	tex.setActive();
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 }
 
 void RendererOGL::endDraw()
@@ -100,7 +119,7 @@ void RendererOGL::addSprite(SpriteComponent* sprite)
 	}
 }
 
-void RendererOGL::removeSprite(SrpiteComponent* sprite)
+void RendererOGL::removeSprite(SpriteComponent* sprite)
 {
 	auto iter = std::find(begin(sprites), end(sprites), sprite);
 	sprites.erase(iter);
