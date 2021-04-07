@@ -1,0 +1,9 @@
+﻿  BackgroundSpriteComponent.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,53): error C2027: use of undefined type 'Rectangle'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(28): message : see declaration of 'Rectangle'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,61): error C2065: 'nullRect': undeclared identifier
+  Texture.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\Texture.cpp(35,53): error C2039: 'toSDLRenderer': is not a member of 'IRenderer'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(5): message : see declaration of 'IRenderer'
+  Window.cpp
+  Generating Code...
