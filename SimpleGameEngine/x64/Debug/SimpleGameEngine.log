@@ -1,0 +1,33 @@
+﻿  Actor.cpp
+  AnimSpriteComponent.cpp
+  Assets.cpp
+  Astroid.cpp
+  BackgroundSpriteComponent.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,53): error C2027: use of undefined type 'Rectangle'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(28): message : see declaration of 'Rectangle'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\BackgroundSpriteComponent.cpp(37,61): error C2065: 'nullRect': undeclared identifier
+  CircleCollisionComponent.cpp
+  Component.cpp
+  Game.cpp
+  InputComponent.cpp
+  Laser.cpp
+  Log.cpp
+  Main.cpp
+  MoveComponent.cpp
+  Random.cpp
+  Rectangle.cpp
+  RendererOGL.cpp
+  RendererSDL.cpp
+  Ship.cpp
+  SpriteComponent.cpp
+  Texture.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\Texture.cpp(35,53): error C2039: 'toSDLRenderer': is not a member of 'IRenderer'
+G:\Programming\SimpleGameEngine\SimpleGameEngine\IRenderer.h(5): message : see declaration of 'IRenderer'
+  Generating Code...
+  Compiling...
+  Timer.cpp
+  Vector2.cpp
+  VertexArray.cpp
+G:\Programming\SimpleGameEngine\SimpleGameEngine\VertexArray.cpp(18,49): warning C4244: 'argument': conversion from 'double' to 'GLsizeiptr', possible loss of data
+  Window.cpp
+  Generating Code...
