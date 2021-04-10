@@ -10,6 +10,5 @@ int main(int argc, char** argv)
 		Game::instance().unload();
 	}
 	Game::instance().close();
-
 	return 0;
 }

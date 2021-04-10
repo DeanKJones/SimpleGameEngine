@@ -13,11 +13,17 @@
     <Filter Include="Maths">
       <UniqueIdentifier>{c3c51817-c513-4d15-b523-f2623851ec30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{d9b2756f-8a13-4258-93be-d614b377dfa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{ff17d8df-892c-4c2d-a8fe-2f93a9c47a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Meshes">
+      <UniqueIdentifier>{1ae9d145-7baf-4bea-a816-deac933c7a48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RendererSDL.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="RendererOGL.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
@@ -26,15 +32,6 @@
     </ClCompile>
     <ClCompile Include="VertexArray.cpp">
       <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Laser.cpp">
-      <Filter>GameSpecific</Filter>
-    </ClCompile>
-    <ClCompile Include="Ship.cpp">
-      <Filter>GameSpecific</Filter>
-    </ClCompile>
-    <ClCompile Include="Astroid.cpp">
-      <Filter>GameSpecific</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
       <Filter>Components</Filter>
@@ -84,11 +81,20 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RendererSDL.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="IRenderer.h">
       <Filter>Graphics</Filter>
     </ClInclude>
@@ -100,15 +106,6 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Laser.h">
-      <Filter>GameSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="Ship.h">
-      <Filter>GameSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="Astroid.h">
-      <Filter>GameSpecific</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Components</Filter>
@@ -160,5 +157,49 @@
     <ClInclude Include="Vector3.h">
       <Filter>Maths</Filter>
     </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\Shaders\Transform.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Res\Shaders\Sprite.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Res\Shaders\Basic.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Res\Shaders\Basic.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Cube.gpmesh">
+      <Filter>Meshes</Filter>
+    </None>
+    <None Include="Plane.gpmesh">
+      <Filter>Meshes</Filter>
+    </None>
+    <None Include="Sphere.gpmesh">
+      <Filter>Meshes</Filter>
+    </None>
+    <None Include="BasicMesh.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="BasicMesh.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Sprite.frag">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

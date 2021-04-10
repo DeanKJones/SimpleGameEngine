@@ -12,7 +12,7 @@ public:
 		Vertical = SDL_FLIP_VERTICAL
 	};
 
-	enum class Type {SDL, OGL};
+	enum class Type { SDL, OGL };
 
 	virtual ~IRenderer() {};
 
@@ -23,9 +23,5 @@ public:
 	virtual void close() = 0;
 	virtual IRenderer::Type type() = 0;
 
-	virtual void drawSprite(const class Actor&,
-		const class Texture& tex,
-		struct Rectangle srcRect,
-		Vector2 origin,
-		Flip flip) const = 0;
+	virtual void drawSprite(const class Actor& actor, const class Texture& tex, struct Rectangle srcRect, Vector2 origin, Flip flip) const = 0;
 };

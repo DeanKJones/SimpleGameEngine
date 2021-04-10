@@ -1,5 +1,6 @@
 #include "BackgroundSpriteComponent.h"
 #include "Actor.h"
+#include "Rectangle.h"
 
 BackgroundSpriteComponent::BackgroundSpriteComponent(Actor* ownerP, const vector<Texture*>& texturesP, int drawOrderP) :
 	SpriteComponent(ownerP, *texturesP[0], drawOrderP),
@@ -33,8 +34,8 @@ void BackgroundSpriteComponent::draw(IRenderer& renderer)
 	// Draw each background texture
 	for (auto& bg : textures)
 	{
-		owner.setPosition(Vector2(bg.offset.x, bg.offset.y));
-		renderer.drawSprite(owner, bg.texture, Rectangle::nullRect, Vector2::zero, IRenderer::Flip::None);
+		owner.setPosition(Vector3(0.0f, bg.offset.x, bg.offset.y));
+		renderer.drawSprite(owner, bg.texture, Rectangle::nullRect, Vector2(-screenSize.x / 2, -screenSize.y / 2), IRenderer::Flip::None);
 	}
 }
 
