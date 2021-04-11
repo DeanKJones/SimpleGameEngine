@@ -1,6 +1,2 @@
-﻿  Actor.cpp
-  RendererOGL.cpp
-  Shader.cpp
-  Window.cpp
-  Generating Code...
+﻿  Game.cpp
   SimpleGameEngine.vcxproj -> G:\Programming\SimpleGameEngine\x64\Debug\SimpleGameEngine.exe
