@@ -3,6 +3,8 @@
 #include "Vector2.h"
 #include <SDL_stdinc.h>
 #include "Matrix4.h"
+#include "InputSystem.h"
+
 using std::vector;
 
 class Game;
@@ -37,8 +39,8 @@ public:
 	Vector3 getForward() const;
 	void computeWorldTransform();
 
-	void processInput(const Uint8* keyState);
-	virtual void actorInput(const Uint8* keyState);
+	void processInput(const InputState& inputState);
+	virtual void actorInput(const InputState& inputState);
 	void update(float dt);
 	void updateComponents(float dt);
 	virtual void updateActor(float dt);
