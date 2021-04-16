@@ -37,6 +37,7 @@ public:
 	void setState(ActorState stateP);
 
 	Vector3 getForward() const;
+	Vector3 getRight() const;
 	void computeWorldTransform();
 
 	void processInput(const InputState& inputState);

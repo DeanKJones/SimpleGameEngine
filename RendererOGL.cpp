@@ -107,7 +107,10 @@ void RendererOGL::drawMeshes()
 	// Draw
 	for (auto mc : meshes)
 	{
-		mc->draw(Assets::getShader("Phong"));
+		if (mc->getVisible())
+		{
+			mc->draw(Assets::getShader("Phong"));
+		}
 	}
 }
 
@@ -146,7 +149,10 @@ void RendererOGL::drawSprites()
 
 	for (auto sprite : sprites)
 	{
-		sprite->draw(*this);
+		if (sprite->getVisible())
+		{
+			sprite->draw(*this);
+		}
 	}
 }
 

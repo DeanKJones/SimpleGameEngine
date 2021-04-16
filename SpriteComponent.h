@@ -11,6 +11,9 @@ public:
 	SpriteComponent(const SpriteComponent&) = delete;
 	SpriteComponent& operator=(const SpriteComponent&) = delete;
 
+	int getVisible() const { return isVisible; }
+	void setVisible(bool isVisibleP);
+
 	virtual void setTexture(const Texture& textureP);
 	virtual void draw(IRenderer& renderer);
 
@@ -23,5 +26,6 @@ protected:
 	int drawOrder;
 	int texWidth;
 	int texHeight;
+	bool isVisible;
 };
 

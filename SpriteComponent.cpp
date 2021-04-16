@@ -18,6 +18,11 @@ SpriteComponent::~SpriteComponent()
 	owner.getGame().getRenderer().removeSprite(this);
 }
 
+void SpriteComponent::setVisible(bool isVisibleP)
+{
+	isVisible = isVisibleP;
+}
+
 void SpriteComponent::setTexture(const Texture& textureP)
 {
 	texture = textureP;
